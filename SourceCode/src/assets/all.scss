@@ -1,0 +1,668 @@
+@import '~bootstrap/scss/functions';
+@import './helpers/variables';
+@import '~bootstrap/scss/bootstrap';
+@import '../assets/helpers/vuejs-noty.scss';
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+body,html a{
+  text-decoration: none !important;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.checkoutArea{
+  transform: translateY(100px);
+  transition: .8s ease;
+  opacity: 0;
+}
+
+.paymentArea{
+  transform: translateY(100px);
+  transition: .8s ease;
+  opacity: 0;
+}
+
+.preFade{
+  transition: 1s ease;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.fadeIn{
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+.curtain{
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  width: 100%;
+  height: 500vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.loginPage{
+  width: 100%;
+  height: 100vh;
+}
+
+.loginCard{
+  border: 3px solid black;
+  padding: 30px;
+  width: 300px;
+}
+
+.loginCard input{
+  border: 3px solid black;
+}
+
+.loginCard input:focus{
+  outline: transparent !important;
+}
+
+.computerHeader{
+  padding: 0 85px;
+  box-sizing: border-box;
+  z-index: 9999 !important;
+}
+
+.logo{
+  z-index: 9999;
+}
+
+.topMenu{
+  z-index: 9998;
+}
+
+@media(max-width : 767px){
+  .computerTopmenu{
+    display: none !important;
+  }
+}
+
+.headerNav h1 a{
+  text-decoration: none;
+}
+
+.navActive{
+  color: $primary !important;
+}
+
+.banner{
+  margin-top: -56px;
+  transition: .8s ease;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.bannerBg{
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1557644978-f61037cfbe49?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80≈');
+  background-size: cover;
+  background-position: center center;
+}
+
+.bannerLeft{
+  padding-left: 85px !important;
+}
+
+.bottom-banner{
+  height: 450px;
+  width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1579825317824-2cc3aa33f75a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80');
+  background-position: center center;
+  background-size: cover;
+  margin: 32px 0;
+}
+
+.computerSubBanner{
+  height: 450px;
+  width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1580485978320-cc2bc7dcf569?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80');
+  background-size: cover;
+  background-position: right center;
+  margin: 32px 0 0 0;
+}
+
+.subInput input{
+  background-color: transparent;
+  border: 1px solid white;
+  width: 230px;
+  height: 42px !important;
+}
+
+.subInput input::placeholder{
+  color: white;
+}
+
+.subInput button{
+  border-radius: 0 !important;
+  font-size: 16px;
+}
+
+.computerFooterBar{
+  background-color: black;
+  padding: 32px 85px;
+}
+
+.card{
+  cursor: pointer;
+  border: none;
+}
+
+.card-header{
+  margin:0 0 10px 0 !important;
+}
+
+.card-body{
+  padding: 0 0 24px 5px !important;
+}
+
+// products page
+
+.productsTopmenu{
+  background-color: #f2f2f2 !important;
+  padding: 24px 0 24px 85px;
+}
+
+.responsiveTopmenu{
+  background-color: #f2f2f2 !important;
+}
+
+.productsTopmenu a{
+  text-decoration: none;
+}
+
+.text-underLine{
+  text-decoration: underline !important;
+}
+
+.bg-weak{
+  border: none;
+  background-color: #f2f2f2 !important;
+  padding: 10px 15px;
+}
+
+.responsiveCartAddBtn button{
+  padding: 0;
+}
+.responsiveCartAddBtn input{
+  padding: 0;
+}
+
+.addBtn button{
+  outline: none !important;
+}
+
+.addBtn button:hover{
+  color: $primary;
+}
+
+.pageDisabled{
+  pointer-events: none !important;
+}
+
+.detailArea{
+  margin-top: 70px;
+}
+
+.detailArea .col-md-7{
+  z-index: 998 !important;
+}
+
+.detailArea .col-md-5{
+  z-index: 999 !important;
+}
+
+.productDetail{
+  transition: 1s ease;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.detailCard{
+  margin-left: -64px !important;
+  margin-top: 25%;
+  padding: 32px;
+  background-color: #fff !important;
+}
+
+.responsiveDetailcard{
+  margin: -30px 0 0 0 !important;
+  width: 90%;
+  left: 5%;
+  position: relative;
+}
+
+.cartIcon{
+  position: relative;
+}
+
+.cartIcon .badge{
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.responsiveCartIcon{
+  position: relative;
+}
+
+.responsiveCartIcon .badge{
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cart{
+  width: 45% !important;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  transition: .3s ease;
+  padding: 54px 48px;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  z-index: 9999;
+}
+
+.responsiveCart{
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  transition: .3s ease;
+  padding: 16px;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  z-index: 9999;
+  display: none !important;
+}
+.cartarea{
+  min-height: calc(85vh - 50px);
+}
+
+.noIteminCart{
+  min-height: calc(10vh - 50px);
+}
+
+.checkBtn{
+  height: 50px;
+}
+
+.cartOpen{
+  right: 0 !important;
+}
+
+.menuOpen{
+  left: 0 !important;
+}
+
+.cartBg{
+  border: none;
+  background-color: #f2f2f2 !important;
+}
+
+.borderNone{
+  border: none !important;
+}
+
+.checkoutBreadcrumb{
+  padding: 0 85px;
+}
+.responsiveCheckoutArea{
+  transition: .5s ease;
+  transform: translateY(50px);
+  opacity: 0;
+  padding: 0 16px;
+  display: none;
+}
+
+.checkoutSelect{
+  max-height: calc(1.6em + 24px);
+  height: calc(1.6em + 24px);
+}
+
+.toCheckoutBtn{
+  width: 100%;
+  padding: 20px 0;
+}
+
+.sildeBar{
+  border: 1px solid $light;
+  cursor: pointer;
+}
+
+.payBtn{
+  padding: 0 100px
+}
+.responsivePayBtn{
+  width: 100%;
+}
+
+.completedBanner{
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1525168986767-293e2138b969?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTF8OTk3MzM2M3x8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');
+  background-size: cover;
+  background-position: center center;
+  margin-top: -62px;
+  z-index: 99;
+  position: relative;
+  padding: 0 16px;
+}
+.completedBanner h3{
+  z-index: 109;
+}
+.completedBanner p{
+  z-index: 109;
+}
+.completedBanner a{
+  z-index: 109;
+}
+.completedBanner::after{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.completedTitle{
+  font-size: 48px;
+}
+
+.completedLeftside{
+  padding-left: 85px;
+}
+
+.addtoCartBtn{
+  padding: 40px 0;
+}
+
+.continueBtn{
+  width: 100%;
+  padding: 18px 0;
+}
+
+/////////////////////// responsive ///////////////////////
+.responsiveHomepage{
+  display: none;
+}
+.responsiveHeadser{
+  z-index: 999;
+  display: none;
+}
+.responsiveHomeBanner{
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1557644978-f61037cfbe49?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80');
+  background-position: center center;
+  background-size: cover;
+  margin-top: -62px;
+  position: relative;
+  z-index: 10;
+  opacity: 0;
+  transition: .5s ease;
+  transform: translateY(50px);
+}
+.responsiveHomeBanner::after{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+}
+
+.bannerTitle{
+  font-size: 48px;
+  z-index: 999;
+}
+.bannerText{
+  z-index: 999;
+  color: #ffffff99;
+}
+.lh-fix{
+  line-height: 70px;
+}
+.toProductsBtn{
+  width: 90%;
+  padding: 20px 0;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  z-index: 999;
+}
+.responsiveCarouselPrefade{
+  display: none;
+}
+.responsiveBottombanner{
+  width: 100%;
+  height: 400px;
+  background-image: url('https://images.unsplash.com/photo-1579825317824-2cc3aa33f75a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80');
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: 48px;
+  display: none;
+}
+.color-fix{
+  color: #ffffff99;
+}
+.zindexFix{
+  z-index: 999;
+}
+.responsiveSubBannerBg{
+  width: 100%;
+  height: 224px;
+  background-image: url('https://images.unsplash.com/photo-1580485978320-cc2bc7dcf569?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  z-index: -1;
+}
+.responsiveSubBannerBg::after{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.subTitle{
+  z-index: 999;
+  padding: 24px 15px;
+}
+.responsiveSubBanner{
+  display: none;
+}
+.reponsiveFooterBar{
+  background-color: black;
+  display: none;
+}
+.responsiveMenu{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: -100%;
+  transition: .3s ease;
+  background-color: #fff;
+  z-index: 9999;
+  padding: 16px;
+}
+.menuHide{
+  height: 0;
+  opacity: 0;
+  display: none !important;
+}
+.menuHide a{
+  z-index: 99;
+}
+.menuShow{
+  height: 100%;
+  opacity: 1;
+  display: flex !important;
+}
+.responsiveProductsSelBanner{
+  display: none;
+}
+.responsiveProductImg{
+  display: none;
+}
+.reponsiveDetail{
+  display: none;
+  transition: .5s ease;
+  opacity: 0;
+  transform: translateY(100px);
+}
+.reponsiveDetail .card{
+  width: 90%;
+  position: relative;
+  left: 5%;
+  padding: 16px;
+  margin: -30px 0 0 0;
+}
+.responsiveCarouselTitle{
+  display: none;
+  margin: 48px 0 16px 16px;
+  font-size: 38px;
+}
+
+.responsiveCart{
+  display: none;
+}
+.submitBtn{
+  padding: 20px 90px;
+}
+.precartListShow{
+  display: none;
+}
+.preInfomationShow{
+  display: none !important;
+}
+.responsiveCartContent{
+  background-color: #f2f2f2;
+  padding: 16px;
+}
+
+.cartListShow{
+  display: block !important;
+}
+.responsivePaymentArea{
+  transition: .5s ease;
+  transform: translateY(100px);
+  opacity: 0;
+  padding: 0 16px;
+  display: none;
+}
+.responsiveCompleted{
+  display: none;
+  position: relative;
+}
+
+@media(max-width: 768px){
+  .computerHomepage{
+    display: none;
+  }
+  .responsiveHomepage{
+    z-index: 99;
+    display: block;
+  }
+  .computerHeader{
+    display: none;
+  }
+  .responsiveHeadser{
+    position: relative;
+    display: block;
+  }
+  .carouselPrefade{
+    display: none;
+  }
+  .responsiveCarouselPrefade{
+    display: block;
+  }
+  .responsiveBottombanner{
+    display: block;
+  }
+  .computerSubBanner{
+    display: none;
+  }
+  .responsiveSubBanner{
+    display: block;
+  }
+  .computerFooterBar{
+    display: none;
+  }
+  .reponsiveFooterBar{
+    display: block;
+  }
+  .cart{
+    display: none;
+  }
+  .responsiveCart{
+    display: block !important;
+  }
+  .resopnsiveMenu{
+    display: block;
+  }
+  .productsSelBanner{
+    display: none;
+  }
+  .responsiveProductsSelBanner{
+    display: block;
+  }
+  .computerProductImg{
+    display: none;
+  }
+  .responsiveProductImg{
+    display: block;
+  }
+  .productDetail{
+    display: none;
+  }
+  .reponsiveDetail{
+    display: block;
+  }
+  .carouselTitle{
+    display: none;
+  }
+  .responsiveCarouselTitle{
+    display: block;
+  }
+  .checkoutBreadcrumb{
+    display: none;
+  }
+  .responsiveCheckoutArea{
+    display: block;
+  }
+  .responsivePaymentArea{
+    display: block;
+  }
+  .computerCompleted{
+    display: none;
+  }
+  .responsiveCompleted{
+    display: block;
+  }
+}
