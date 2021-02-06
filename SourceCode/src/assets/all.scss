@@ -175,6 +175,13 @@ body,html a{
   padding: 0 0 24px 5px !important;
 }
 
+.content-area{
+  min-height: calc(100vh - 104px);
+}
+.computerFooterBar{
+  height: 104px;
+}
+
 // products page
 
 .productsTopmenu{

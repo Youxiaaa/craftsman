@@ -1,7 +1,9 @@
 <template>
   <div>
-    <navBar></navBar>
-    <router-view></router-view>
+    <div class="content-area">
+      <navBar></navBar>
+      <router-view></router-view>
+    </div>
     <footerBar></footerBar>
     <Cart></Cart>
   </div>
