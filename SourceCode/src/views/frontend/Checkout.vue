@@ -264,7 +264,7 @@ export default {
       vm.$router.push('/payment')
       setTimeout(() => {
         vm.$bus.$emit('getInfomation', checkoutData)
-      }, 50)
+      }, 300)
     }
   },
   computed: {

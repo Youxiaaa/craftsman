@@ -308,10 +308,10 @@ export default {
 
     vm.$http.get(api).then((res) => {
       if (res.data.success) {
-        vm.isLoading = false
         vm.carts = res.data.data.carts
         document.querySelector('.paymentArea').classList.add('fadeIn')
         document.querySelector('.responsivePaymentArea').classList.add('fadeIn')
+        vm.isLoading = false
       }
     })
   }

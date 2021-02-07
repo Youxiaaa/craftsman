@@ -191,7 +191,6 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMERPATH}/admin/products/all`
       vm.isLoading = true
       vm.$http.get(api).then((res) => {
-        console.log(res.data)
         vm.products = res.data.products
         vm.isLoading = false
       })
@@ -242,7 +241,6 @@ export default {
         } else {
           vm.isLoading = false
           $('#productModal').modal('hide')
-          console.log(res.data)
         }
       })
     },

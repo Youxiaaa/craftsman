@@ -199,6 +199,7 @@ export default {
     }
   },
   created () {
+    document.documentElement.scrollTop = 0
     const vm = this
     vm.isLoading = true
 
@@ -208,30 +209,22 @@ export default {
     const addrLast = decodeURI(addr.substring(index + 1, addr.length))
     vm.cacheId = addrLast
 
+    if (vm.cacheId) {
+      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMERPATH}/product/${vm.cacheId}`
+      vm.$http.get(api).then((res) => {
+        if (res.data.success) {
+          vm.product = res.data.product
+          document.querySelector('.productDetail').classList.add('fadeIn')
+          document.querySelector('.reponsiveDetail').classList.add('fadeIn')
+          vm.isLoading = false
+        } else {
+          vm.isLoading = false
+        }
+      })
+    }
     setTimeout(() => {
-      if (vm.cacheId) {
-        const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMERPATH}/product/${vm.cacheId}`
-        vm.$http.get(api).then((res) => {
-          document.documentElement.scrollTop = 0
-          if (res.data.success) {
-            vm.product = res.data.product
-            document.querySelector('.productDetail').classList.add('fadeIn')
-            document.querySelector('.reponsiveDetail').classList.add('fadeIn')
-            vm.isLoading = false
-          } else {
-            vm.isLoading = false
-          }
-        })
-      }
+      vm.$bus.$emit('getPageLocation', 'details')
     }, 10)
-    setTimeout(() => {
-      vm.$bus.$emit('getPageLocation', 'products')
-    }, 10)
-
-    vm.$bus.$on('getProductId', (id) => {
-      vm.cacheId = id
-      vm.productQty = 1
-    })
   }
 }
 </script>

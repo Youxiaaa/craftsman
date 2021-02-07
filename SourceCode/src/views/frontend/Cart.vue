@@ -202,7 +202,6 @@ export default {
             qty: item.qty
           }
           vm.$http.post(api, { data: cache }).then((res) => {
-            console.log(res.data)
             vm.cartData = []
             localStorage.removeItem('cartsData')
             localStorage.setItem('cartData', JSON.stringify(vm.cartData))
