@@ -282,6 +282,7 @@ export default {
     const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMERPATH}/cart`
     document.documentElement.scrollTop = 0
     vm.$bus.$emit('getPageName', 'checkout')
+    vm.$bus.$emit('getPageLocation', 'checkout')
     vm.isLoading = true
     vm.$http.get(api).then((res) => {
       if (res.data.success) {
