@@ -30,7 +30,9 @@
       <div class="homeContent mt-5">
         <div class="container">
           <div class="row preFade">
-            <div class="col-md-6 d-flex align-items-center"><img src="https://images.unsplash.com/photo-1473230841016-ca42011196d0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80" alt="" width="100%"></div>
+            <div v-lazy-container="{ selector: 'img' }" class="col-md-6 d-flex align-items-center">
+              <img data-src="https://images.unsplash.com/photo-1473230841016-ca42011196d0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80" alt="" width="100%">
+            </div>
             <div class="col-md-6 d-flex flex-column justify-content-center p-5">
               <p class="h3 pl-5">
                 Special Clays
@@ -42,8 +44,8 @@
             </div>
           </div>
           <div class="row my-4 flex-row-reverse preFade">
-            <div class="col-md-6 d-flex align-items-center">
-              <img src="https://images.unsplash.com/photo-1572725394982-fbee32027b77?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="" width="100%">
+            <div v-lazy-container="{ selector: 'img' }" class="col-md-6 d-flex align-items-center">
+              <img data-src="https://images.unsplash.com/photo-1572725394982-fbee32027b77?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="" width="100%">
             </div>
             <div class="col-md-6 d-flex flex-column justify-content-center p-5">
               <p class="h3 px-5 text-right">
@@ -56,8 +58,8 @@
             </div>
           </div>
           <div class="row preFade">
-            <div class="col-md-6 d-flex align-items-center">
-              <img src="https://images.unsplash.com/photo-1541085478756-418a3402fcb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" alt="" width="100%">
+            <div v-lazy-container="{ selector: 'img' }" class="col-md-6 d-flex align-items-center">
+              <img data-src="https://images.unsplash.com/photo-1541085478756-418a3402fcb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" alt="" width="100%">
             </div>
             <div class="col-md-6 d-flex flex-column justify-content-center p-5">
               <p class="h3 px-5">

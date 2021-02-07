@@ -31,8 +31,8 @@
           <div class="col-6 col-md-4 p-1" v-for="item in products" :key="item.id">
             <div class="card my-1" @click="checkProduct(item.id)">
               <div class="card-header p-0">
-                <img :src="item.image" class="computerProductImg" alt="" width="100%">
-                <img :src="item.image" class="responsiveProductImg" alt="" width="100%" height="180px">
+                <img v-lazy="item.image" class="computerProductImg" alt="" width="100%">
+                <img v-lazy="item.image" class="responsiveProductImg" alt="" width="100%" height="180px">
               </div>
               <div class="card-body">
                 <h2 class="h4"> {{ item.title }} </h2>
@@ -85,9 +85,7 @@ export default {
       if (res.data.success) {
         vm.isLoading = false
         vm.products = res.data.products
-        setTimeout(() => {
-          document.querySelector('.preFade').classList.add('fadeIn')
-        }, 200)
+        document.querySelector('.preFade').classList.add('fadeIn')
       } else {
         vm.isLoading = false
       }

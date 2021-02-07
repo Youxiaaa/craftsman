@@ -85,7 +85,7 @@
         <div class="cartContent mt-4">
           <ul class="p-0">
             <li class="d-flex align-items-center my-3" v-for="item in carts" :key="item.id">
-              <img :src="item.product.image" alt="" width="48px" height="48px">
+              <img v-lazy="item.product.image" alt="" width="48px" height="48px">
               <h5 class="h5 ml-3"> {{ item.product.title }} <span class="h6"> x {{ item.qty }} </span> </h5>
               <h5 class="ml-auto"> NT{{ item.product.price | DollarsignFilter }} </h5>
             </li>
@@ -127,7 +127,7 @@
             </ul>
             <ul class="p-0 precartListShow mt-5" :class="{'cartListShow': cartListisOpen}">
               <li class="d-flex align-items-center my-3" v-for="item in carts" :key="item.id">
-                <img :src="item.product.image" alt="" width="48px" height="48px">
+                <img v-lazy="item.product.image" alt="" width="48px" height="48px">
                 <h5 class="h5 ml-3"> {{ item.product.title }} <span class="h6"> x {{ item.qty }} </span> </h5>
                 <h5 class="ml-auto"> NT{{ item.product.price | DollarsignFilter }} </h5>
               </li>

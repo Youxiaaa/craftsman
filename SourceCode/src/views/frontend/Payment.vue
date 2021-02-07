@@ -10,18 +10,32 @@
           <h2 class="h3 mt-5">Infomation</h2>
           <div class="sildeBar">
             <ul class="m-0">
-              <li class="list-unstyled d-flex justify-content-between align-items-center pb-2 pt-3">
+              <li class="list-unstyled d-flex justify-content-between align-items-center pb-2 pt-3" @click="contactisOpen = !contactisOpen">
                 <span class="h5">Contact</span>
-                <a href="#" class="text-secondary h6"> {{ infomation.user.name }} / {{ infomation.user.email }} / {{ infomation.user.tel }} </a>
-                <i class="fas fa-sort-down mr-5 mb-3"></i></li>
+                <a class="text-secondary h6 computerEllipsis"> {{ infomation.user.name }} / {{ infomation.user.email }} / {{ infomation.user.tel }} </a>
+                <i class="fas fa-chevron-up mr-3 mb-3 text-primary" v-if="contactisOpen === false"></i>
+                <i class="fas fa-chevron-down mr-3 mb-3 text-primary" v-else></i>
+              </li>
+              <div class="preInfomationShow mb-3" :class="{'cartListShow': contactisOpen === true}">
+                <span class="text-light"> {{ infomation.user.name }} </span>
+                <br>
+                <span class="text-light"> {{ infomation.user.email }} </span>
+                <br>
+                <span class="text-light"> {{ infomation.user.tel }} </span>
+              </div>
             </ul>
           </div>
           <div class="sildeBar">
             <ul class="m-0">
-              <li class="list-unstyled d-flex justify-content-between align-items-center pb-2 pt-3">
+              <li class="list-unstyled d-flex justify-content-between align-items-center pb-2 pt-3" @click="shipisOpen = !shipisOpen">
                 <span class="h5">Ship to</span>
-                <a href="#" class="text-secondary h6"> {{ infomation.user.address }} / {{ infomation.user.city }} / {{ infomation.user.country }} </a>
-                <i class="fas fa-sort-down mr-5 mb-3"></i></li>
+                <a href="#" class="text-secondary h6 computerEllipsis"> {{ infomation.user.address }} / {{ infomation.user.city }} / {{ infomation.user.country }} </a>
+                <i class="fas fa-chevron-up mr-3 mb-3 text-primary" v-if="shipisOpen === false"></i>
+                <i class="fas fa-chevron-down mr-3 mb-3 text-primary" v-else></i>
+              </li>
+                <div class="preInfomationShow mb-3" :class="{'cartListShow': shipisOpen === true}">
+                  <span class="text-light"> {{ infomation.user.address }} </span>
+                </div>
             </ul>
           </div>
           <label class="h3 mt-5" for="creditNumber">Credit Card</label>
@@ -78,7 +92,7 @@
         <div class="cartContent mt-5">
           <ul class="p-0">
             <li class="d-flex align-items-center my-3" v-for="item in carts" :key="item.id">
-              <img :src="item.product.image" alt="" width="48px" height="48px">
+              <img v-lazy="item.product.image" alt="" width="48px" height="48px">
               <h5 class="h5 ml-3"> {{ item.product.title }} <span class="h6"> x {{ item.qty }} </span> </h5>
               <h5 class="ml-auto"> NT{{ item.product.price | DollarsignFilter }} </h5>
             </li>
@@ -117,8 +131,8 @@
               </li>
             </ul>
             <ul class="p-0 precartListShow mt-5" :class="{'cartListShow': cartListisOpen}">
-              <li class="d-flex align-items-center my-3" v-for="item in carts" :key="item.id">
-                <img :src="item.product.image" alt="" width="48px" height="48px">
+              <li class="d-flex align-items-center mb-3" v-for="item in carts" :key="item.id">
+                <img v-lazy="item.product.image" alt="" width="48px" height="48px">
                 <h5 class="h5 ml-3"> {{ item.product.title }} <span class="h6"> x {{ item.qty }} </span> </h5>
                 <h5 class="ml-auto"> NT{{ item.product.price | DollarsignFilter }} </h5>
               </li>
@@ -154,9 +168,11 @@
                 <i class="fas fa-chevron-up mr-3 mb-3 text-primary" v-if="contactisOpen === false"></i>
                 <i class="fas fa-chevron-down mr-3 mb-3 text-primary" v-else></i>
               </li>
-                <div class="d-flex flex-column preInfomationShow" :class="{'cartListShow': contactisOpen === true}">
+                <div class="preInfomationShow" :class="{'cartListShow': contactisOpen === true}">
                   <span class="text-light"> {{ infomation.user.name }} </span>
+                  <br>
                   <span class="text-light"> {{ infomation.user.email }} </span>
+                  <br>
                   <span class="text-light"> {{ infomation.user.tel }} </span>
                 </div>
             </ul>
@@ -171,7 +187,7 @@
               </li>
                 <div class="row">
                   <div class="col-8">
-                    <div class="d-flex preInfomationShow" :class="{'cartListShow': shipisOpen === true}">
+                    <div class="preInfomationShow" :class="{'cartListShow': shipisOpen === true}">
                       <span class="text-light"> {{ infomation.user.address }} </span>
                     </div>
                   </div>

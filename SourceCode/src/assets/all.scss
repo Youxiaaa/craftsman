@@ -25,6 +25,17 @@ body,html a{
   white-space: normal;
 }
 
+.computerEllipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
 .checkoutArea{
   transform: translateY(100px);
   transition: .8s ease;

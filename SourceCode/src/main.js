@@ -13,6 +13,7 @@ import './bus'
 import { ValidationObserver, ValidationProvider, extend, localize, configure } from 'vee-validate'
 import TW from 'vee-validate/dist/locale/zh_TW.json'
 import * as rules from 'vee-validate/dist/rules'
+import VueLazyload from 'vue-lazyload'
 
 Vue.config.productionTip = false
 
@@ -22,6 +23,12 @@ Vue.use(VueNoty, {
   timeout: 1000,
   progressBar: true,
   layout: 'topRight'
+})
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: 'dist/error.png',
+  loading: 'dist/loading.gif',
+  attempt: 1
 })
 
 Vue.filter('DollarsignFilter', DollarsignFilter)

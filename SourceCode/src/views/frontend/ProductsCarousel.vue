@@ -2,13 +2,13 @@
   <div>
     <div class="row m-0">
         <div class="col carouselPrefade">
-            <carousel :per-page="1" :navigate-to="someLocalProperty" :mouse-drag="false">
+            <carousel :per-page="1" :mouse-drag="false">
             <slide>
               <div class="row px-5 mx-0">
                 <div class="col-md-3 d-flex justify-content-center">
                   <div class="card">
                     <div class="card-header p-0">
-                      <img :src="products[0].image" alt="" width="100%" height="280px" @click="checkDetail(products[0].id)">
+                      <img v-lazy="products[0].image" alt="" width="100%" height="280px" @click="checkDetail(products[0].id)">
                     </div>
                     <div class="card-body">
                       <h3 class="h5"> {{ products[0].title }} </h3>
@@ -21,7 +21,7 @@
                 <div class="col-md-3 d-flex justify-content-center">
                   <div class="card">
                     <div class="card-header p-0">
-                      <img :src="products[1].image" alt="" width="100%" height="280px" @click="checkDetail(products[1].id)">
+                      <img v-lazy="products[1].image" alt="" width="100%" height="280px" @click="checkDetail(products[1].id)">
                     </div>
                     <div class="card-body">
                       <h3 class="h5"> {{ products[1].title }} </h3>
@@ -34,7 +34,7 @@
                 <div class="col-md-3 d-flex justify-content-center">
                   <div class="card">
                     <div class="card-header p-0">
-                      <img :src="products[2].image" alt="" width="100%" height="280px" @click="checkDetail(products[2].id)">
+                      <img v-lazy="products[2].image" alt="" width="100%" height="280px" @click="checkDetail(products[2].id)">
                     </div>
                     <div class="card-body">
                       <h3 class="h5"> {{ products[2].title }} </h3>
@@ -47,7 +47,7 @@
                 <div class="col-md-3 d-flex justify-content-center">
                   <div class="card">
                     <div class="card-header p-0">
-                      <img :src="products[3].image" alt="" width="100%" height="280px" @click="checkDetail(products[3].id)">
+                      <img v-lazy="products[3].image" alt="" width="100%" height="280px" @click="checkDetail(products[3].id)">
                     </div>
                     <div class="card-body">
                       <h3 class="h5"> {{ products[3].title }} </h3>
@@ -64,7 +64,7 @@
                 <div class="col-md-3 d-flex justify-content-center">
                   <div class="card">
                     <div class="card-header p-0">
-                      <img :src="products[4].image" alt="" width="100%" height="280px" @click="checkDetail(products[4].id)">
+                      <img v-lazy="products[4].image" alt="" width="100%" height="280px" @click="checkDetail(products[4].id)">
                     </div>
                     <div class="card-body">
                       <h3 class="h5"> {{ products[4].title }} </h3>
@@ -77,7 +77,7 @@
                 <div class="col-md-3 d-flex justify-content-center">
                   <div class="card">
                     <div class="card-header p-0">
-                      <img :src="products[5].image" alt="" width="100%" height="280px" @click="checkDetail(products[5].id)">
+                      <img v-lazy="products[5].image" alt="" width="100%" height="280px" @click="checkDetail(products[5].id)">
                     </div>
                     <div class="card-body">
                       <h3 class="h5"> {{ products[5].title }} </h3>
@@ -90,7 +90,7 @@
                 <div class="col-md-3 d-flex justify-content-center">
                   <div class="card">
                     <div class="card-header p-0">
-                      <img :src="products[6].image" alt="" width="100%" height="280px" @click="checkDetail(products[6].id)">
+                      <img v-lazy="products[6].image" alt="" width="100%" height="280px" @click="checkDetail(products[6].id)">
                     </div>
                     <div class="card-body">
                       <h3 class="h5"> {{ products[6].title }} </h3>
@@ -103,7 +103,7 @@
                 <div class="col-md-3 d-flex justify-content-center">
                   <div class="card">
                     <div class="card-header p-0">
-                      <img :src="products[7].image" alt="" width="100%" height="280px" @click="checkDetail(products[7].id)">
+                      <img v-lazy="products[7].image" alt="" width="100%" height="280px" @click="checkDetail(products[7].id)">
                     </div>
                     <div class="card-body">
                       <h3 class="h5"> {{ products[7].title }} </h3>
@@ -118,7 +118,7 @@
           </carousel>
         </div>
         <div class="col responsiveCarouselPrefade">
-          <carousel :per-page="1" :navigate-to="someLocalProperty" :mouse-drag="false">
+          <carousel :per-page="1" :mouse-drag="false">
             <slide v-for="item in products" :key="item.id">
               <div class="card">
                 <div class="card-header p-0">
