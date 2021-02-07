@@ -122,8 +122,8 @@
         </div>
       </div>
       <div class="row m-0 mt-5 px-2">
-        <div class="col-12 text-center preFade">
-          <img src="https://images.unsplash.com/photo-1473230841016-ca42011196d0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80" alt="" width="100%">
+        <div v-lazy-container="{ selector: 'img' }" class="col-12 text-center preFade">
+          <img data-src="https://images.unsplash.com/photo-1473230841016-ca42011196d0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80" alt="" width="100%">
         </div>
         <div class="col-12 mt-5 pl-4 preFade">
           <h3>Special Clays</h3>
@@ -132,8 +132,8 @@
           </p>
           <a href="#">learn more</a>
         </div>
-        <div class="col-12 text-center my-5 preFade">
-          <img src="https://images.unsplash.com/photo-1572725394982-fbee32027b77?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="" width="100%">
+        <div v-lazy-container="{ selector: 'img' }" class="col-12 text-center my-5 preFade">
+          <img data-src="https://images.unsplash.com/photo-1572725394982-fbee32027b77?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="" width="100%">
         </div>
         <div class="col-12 pl-4 preFade">
           <h3>Less is more</h3>
@@ -142,8 +142,8 @@
           </p>
           <a href="#">learn more</a>
         </div>
-        <div class="col-12 text-center mt-5 preFade">
-          <img src="https://images.unsplash.com/photo-1541085478756-418a3402fcb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" alt="" width="100%">
+        <div v-lazy-container="{ selector: 'img' }" class="col-12 text-center mt-5 preFade">
+          <img data-src="https://images.unsplash.com/photo-1541085478756-418a3402fcb7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" alt="" width="100%">
         </div>
         <div class="col-12 my-5 pl-4 preFade">
           <h3>Marvelous Detail</h3>
