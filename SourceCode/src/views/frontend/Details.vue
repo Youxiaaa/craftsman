@@ -209,19 +209,17 @@ export default {
     const addrLast = decodeURI(addr.substring(index + 1, addr.length))
     vm.cacheId = addrLast
 
-    if (vm.cacheId) {
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMERPATH}/product/${vm.cacheId}`
-      vm.$http.get(api).then((res) => {
-        if (res.data.success) {
-          vm.product = res.data.product
-          document.querySelector('.productDetail').classList.add('fadeIn')
-          document.querySelector('.reponsiveDetail').classList.add('fadeIn')
-          vm.isLoading = false
-        } else {
-          vm.isLoading = false
-        }
-      })
-    }
+    const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMERPATH}/product/${vm.cacheId}`
+    vm.$http.get(api).then((res) => {
+      if (res.data.success) {
+        vm.product = res.data.product
+        document.querySelector('.productDetail').classList.add('fadeIn')
+        document.querySelector('.reponsiveDetail').classList.add('fadeIn')
+        vm.isLoading = false
+      } else {
+        vm.isLoading = false
+      }
+    })
     setTimeout(() => {
       vm.$bus.$emit('getPageLocation', 'details')
     }, 10)
