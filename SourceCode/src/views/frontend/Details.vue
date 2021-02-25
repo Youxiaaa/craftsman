@@ -127,11 +127,6 @@ export default {
   watch: {
     cacheId: function () {
       const vm = this
-      const htmlHref = window.location.href.replace(/^http:\/\/[^/]+/, '')
-      const addr = htmlHref.substr(htmlHref.lastIndexOf('/', htmlHref.lastIndexOf('/') - 1) + 1)
-      const index = addr.lastIndexOf('/')
-      const addrLast = decodeURI(addr.substring(index + 1, addr.length))
-      vm.cacheId = addrLast
       vm.isLoading = true
       document.documentElement.scrollTop = 0
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMERPATH}/product/${vm.cacheId}`
@@ -223,6 +218,10 @@ export default {
     setTimeout(() => {
       vm.$bus.$emit('getPageLocation', 'details')
     }, 10)
+
+    vm.$bus.$on('getProductId', (id) => {
+      vm.cacheId = id
+    })
   }
 }
 </script>
